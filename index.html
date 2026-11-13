@@ -356,6 +356,49 @@ em.acc{font-family:inherit;font-style:normal;font-weight:inherit;color:var(--acc
 .scp-lbl{position:relative}
 @keyframes scpfill{to{width:100%}}
 .bal-title{margin:0;align-self:stretch;text-align:left;font-size:16px;font-weight:700;color:var(--ink);line-height:1.3}
+
+/* UC: bill paid + awarded scratch card */
+.bp{min-height:100%;background:#F2F1EF;padding-bottom:28px}
+.bp-bar{display:flex;align-items:center;gap:8px;padding:4px 16px 12px}
+.bp-bar h2{flex:1;margin:0;text-align:center;font-size:15px;font-weight:800;letter-spacing:.02em}
+.bp-bc{font-size:10px;font-weight:800;line-height:1.05;color:#1F4E9C;text-align:left;width:46px}
+.bp-dark{margin:0 8px;background:#1E1E1E;border-radius:26px;padding:8px 8px 18px;color:#fff}
+.bp-paid{background:#fff;color:var(--ink);border-radius:20px;padding:18px 14px 14px;display:flex;flex-direction:column;gap:14px}
+.bp-cc{position:relative;width:62px;height:44px}
+.bp-cc>span{position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#F7A64B,#EC7A2B);transform:rotate(-10deg)}
+.bp-cc svg{position:absolute;right:-6px;bottom:-6px}
+.bp-ok{display:block;font-size:20px;font-weight:800;color:#2E9B4F}
+.bp-amt{display:block;font-size:22px;font-weight:800}
+.bp-bank{display:flex;align-items:center;gap:10px;background:#A9295C;color:#fff;border-radius:14px;padding:14px 16px;font-size:14px}
+.bp-bk{width:26px;height:26px;border-radius:50%;background:#fff;color:#A9295C;display:grid;place-items:center;font-size:12px;font-weight:800}
+.bp-tl{padding:18px 12px 0;display:flex;flex-direction:column;gap:18px}
+.bp-st{display:flex;gap:10px;align-items:flex-start}
+.bp-st>div{flex:1;display:flex;flex-direction:column;gap:4px}
+.bp-st b{font-size:15px;font-weight:600}.bp-st span{font-size:12px;color:#BDBDBD;line-height:1.5}
+.bp-st em{font-style:normal;font-size:11px;color:#E5E5E5;white-space:nowrap;margin-top:2px}
+.bp-sec{text-align:center;font-size:12px;color:#555;padding:14px 0 10px}.bp-sec b{color:#C8A21A;margin-left:4px}
+.bp-card{margin:0 12px 12px;background:#fff;border-radius:18px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.05);display:block}
+.bp-vd{font-size:10px;font-weight:800;letter-spacing:.08em;color:#B35C00}
+.bp-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px 0;font-size:12px}
+.bp-row span{color:#666;text-transform:none}.bp-row b{font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.bp-claim{display:flex;align-items:center;gap:12px;width:calc(100% - 24px);text-align:left}
+.bp-claim b{display:block;font-size:14px}.bp-claim span span,.bp-claim>span>span{display:block;font-size:12px;color:#666;margin-top:2px}
+.award{position:absolute;inset:0;z-index:38;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .2s}
+.award.show{opacity:1}
+.aw-scrim{position:absolute;inset:0;background:rgba(10,12,20,.62)}
+.aw-box{position:relative;z-index:2;width:100%;background:#fff;border-radius:24px;padding:26px 20px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;overflow:hidden;transform:scale(.85);transition:transform .35s cubic-bezier(.2,1.4,.4,1)}
+.award.show .aw-box{transform:none}
+.aw-rays{position:absolute;top:-90px;left:50%;width:360px;height:360px;margin-left:-180px;border-radius:50%;background:repeating-conic-gradient(rgba(243,180,47,.22) 0 10deg,transparent 10deg 20deg);animation:celspin 14s linear infinite;-webkit-mask:radial-gradient(circle,#000 25%,transparent 65%);mask:radial-gradient(circle,#000 25%,transparent 65%)}
+.aw-card{position:relative;z-index:1;width:150px;height:150px;border-radius:18px;background:repeating-linear-gradient(45deg,#1E1E1E 0 9px,#2A2A2A 9px 18px);display:grid;place-items:center;box-shadow:0 14px 30px rgba(0,0,0,.3);overflow:hidden;animation:awin .7s .1s cubic-bezier(.2,1.5,.4,1) both, awwob 2.6s 1s ease-in-out infinite}
+.aw-rib{position:absolute;inset:0;background:linear-gradient(90deg,transparent 44%,#E8A93A 44% 56%,transparent 56%),linear-gradient(0deg,transparent 44%,#E8A93A 44% 56%,transparent 56%);opacity:.9}
+.aw-lbl{position:relative;font-size:12px;font-weight:800;letter-spacing:.16em;color:#FFE7A8;background:#1E1E1E;padding:6px 10px;border-radius:8px}
+.aw-shine{position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(20deg);animation:awshine 2.4s 1s ease-in-out infinite}
+@keyframes awin{from{transform:scale(.3) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes awwob{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+@keyframes awshine{0%{left:-60%}60%,100%{left:130%}}
+.aw-h{position:relative;margin:8px 0 0;font-size:20px;font-weight:800;line-height:1.3;color:var(--ink)}
+.aw-p{position:relative;margin:0 0 6px;font-size:14px;line-height:1.45;color:#5E5E5E}
+.aw-later{font-size:14px;font-weight:700;color:#666;padding:8px 16px}
 /* Scratch nudge */
 .nudge{display:flex;align-items:center;gap:14px;width:100%;padding:16px;border-radius:20px;background:linear-gradient(120deg,#FFF3E0 0%,#FCE3C4 100%);border:1px solid #F3D3A8;box-shadow:0 1px 4px rgba(0,0,0,.06);text-align:left}
 .nudge-art{position:relative;width:66px;height:62px;flex-shrink:0}
@@ -1463,8 +1506,8 @@ function referTnc(){
     </div></div>`;
 }
 
-const SCREENS = {refer:referScreen, refer_track:referTrack, refer_how:referHow, refer_tnc:referTnc, how:howScreen, home, spin, scratch:scratchScreen, milestones:milestonesScreen, store:storeScreen, vouchers:vouchersScreen, ledger:ledgerScreen};
-const RAIL = [['home','Rewards tab','Bottom nav'],['how','How rewards work','Info page'],['scratch','Scratch cards',''],['store','Rewards store','Redeem / buy'],['vouchers','My vouchers',''],['ledger','Coins history','Ledger']];
+const SCREENS = {billpaid:billPaidScreen, refer:referScreen, refer_track:referTrack, refer_how:referHow, refer_tnc:referTnc, how:howScreen, home, spin, scratch:scratchScreen, milestones:milestonesScreen, store:storeScreen, vouchers:vouchersScreen, ledger:ledgerScreen};
+const RAIL = [['home','Rewards tab','Bottom nav'],['billpaid','UC · Awarded SC','Bill paid'],['how','How rewards work','Info page'],['scratch','Scratch cards',''],['store','Rewards store','Redeem / buy'],['vouchers','My vouchers',''],['ledger','Coins history','Ledger']];
 
 function render(keepScroll){
   const st = keepScroll ? screenEl.scrollTop : 0;
@@ -1476,7 +1519,7 @@ function render(keepScroll){
   $('railNav').innerHTML = RAIL.map(([k,l,s])=>`<button class="${S.screen===k?'on':''}" data-go="${k}">${l}<small>${s}</small></button>`).join('');
   $('stateBox').innerHTML = `<span>Coins</span><span class="num">${fmt(S.coins)}</span><span>Active vouchers</span><span class="num">${activeVouchers().length}</span>`;
 }
-function go(s){ S.screen=s; closeSheet(); render(); }
+function go(s){ S.screen=s; closeSheet(); if(typeof closeScratchPop==='function'&&$('scpop')) closeScratchPop(); render(); if(s==='billpaid') setTimeout(awardSC,800); }
 
 /* ---------- Toast & sheet ---------- */
 let tt;
@@ -1585,6 +1628,59 @@ function confetti(cv){
   })(t0);
 }
 function closeCelebrate(){ const el=$('celebrate'); if(!el) return; el.classList.remove('show'); setTimeout(()=>el.remove(),250); }
+
+
+/* ---------- UC: Awarded scratch card (post bill payment) ---------- */
+function billPaidScreen(){
+  const ok='<svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#2E9B4F"/><path d="M6 10.2l2.6 2.6L14 7.5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const row=(k,v,copy)=>`<div class="bp-row"><span>${k}</span><b>${v}${copy?' <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="8" y="8" width="12" height="12" rx="2" stroke="#111" stroke-width="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3" stroke="#111" stroke-width="2"/></svg>':''}</b></div>`;
+  return `<div class="bp">
+    <div class="statusbar">9:41<span style="font-size:12px;letter-spacing:.06em">●●● ▮</span></div>
+    <div class="bp-bar"><button class="iconbtn plain" data-go="home" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="#111" stroke-width="2.4" stroke-linecap="round"/></svg></button><h2>BILL DETAILS</h2><span class="bp-bc">Bharat<br>Connect</span></div>
+    <div class="bp-dark">
+      <div class="bp-paid">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="bp-cc"><span></span>${ok}</span>
+          <span><b class="bp-ok">Paid</b><b class="bp-amt num">₹36,200.34</b></span>
+        </div>
+        <div class="bp-bank"><span class="bp-bk">A</span><b>Axis Bank</b><span style="margin-left:auto;opacity:.85">..0987</span></div>
+      </div>
+      <div class="bp-tl">
+        <div class="bp-st">${ok}<div><b>Payment Initiated</b><span>Paid using UPI</span></div><em>21 Jun, 7:16 PM</em></div>
+        <div class="bp-st">${ok}<div><b>Transferred to bank</b><span>It may take upto 2 business days to reflect in your bank account</span></div><em>21 Jun, 7:16 PM</em></div>
+      </div>
+    </div>
+    <div class="bp-sec">Payments secured with <b>mint</b>money</div>
+    <div class="bp-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="font-size:14px">Payment Details</b><span class="bp-vd">VIEW DETAILS</span></div>
+      ${row('AMOUNT','₹4000')}${row('METHOD','Paytm')}${row('Bharat Connect ID','ab1a12abc12aab1a…',1)}${row('ORDER ID','7328742',1)}
+    </div>
+    <button class="tap bp-card bp-claim" data-scratchnext><span class="bp-coin">${COIN(34)}</span><span style="flex:1"><b>Claim Rewards</b><span>Scratch card, coins or Amazon voucher</span></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>`;
+}
+function awardSC(){
+  if(S.screen!=='billpaid') return;
+  const card={id:'s'+Date.now(),src:'Credit card bill paid',date:'Today',r:amazonReward(),done:false};
+  S.scratch.unshift(card);
+  const old=$('award'); if(old) old.remove();
+  const el=document.createElement('div'); el.id='award'; el.className='award';
+  el.innerHTML=`<div class="aw-scrim"></div><canvas class="scp-confetti" id="awConf"></canvas>
+    <div class="aw-box" role="dialog" aria-modal="true" aria-label="Scratch card awarded">
+      <div class="aw-rays"></div>
+      <div class="aw-card"><span class="aw-rib"></span><span class="aw-lbl">SCRATCH</span><span class="aw-shine"></span></div>
+      <h3 class="aw-h">Congrats!! You've got a scratch card</h3>
+      <p class="aw-p">Scratch &amp; unlock an Amazon voucher worth up to ₹1,000</p>
+      <button class="btn btn-md btn-gold full" id="awGo">Scratch now</button>
+      <button class="tap aw-later" id="awLater">Later</button>
+    </div>`;
+  $('device').appendChild(el);
+  requestAnimationFrame(()=>el.classList.add('show'));
+  confetti($('awConf'));
+  const close=()=>{ el.classList.remove('show'); setTimeout(()=>el.remove(),220); };
+  el.querySelector('.aw-scrim').onclick=close;
+  $('awLater').onclick=()=>{ close(); toast('Scratch card saved to My scratch cards'); };
+  $('awGo').onclick=()=>{ el.remove(); openScratch(card.id); };
+}
 
 /* ---------- Scratch ---------- */
 let scpTimer=null, scpTotal=0, scpSeen=0;

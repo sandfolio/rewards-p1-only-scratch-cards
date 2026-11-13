@@ -37,6 +37,17 @@ Works on GitHub Pages as-is (Settings → Pages → deploy from branch root).
 3. Confetti + Amazon voucher reveal with code. Voucher is saved to **My vouchers**.
 4. Auto-moves to the next card after **3 seconds** (or tap "Next card"). Last card shows "Done".
 
+## UC · Awarded SC (scratch card after a bill payment)
+
+Open **UC · Awarded SC** in the side panel. The Bill details screen loads, and after ~0.8s a scratch card is awarded:
+
+1. Popup with confetti and an animated scratch card: **"Congrats!! You've got a scratch card"** — *Scratch & unlock an Amazon voucher worth up to ₹1,000*.
+2. **Scratch now** opens the scratch popup on that card (same reveal + auto-next flow).
+3. **Later** keeps the card in My scratch cards (home banner and menu badge update).
+4. **Claim Rewards** on the bill screen also opens the scratch popup.
+
+![Awarded scratch card](screenshots/12-uc-awarded-scratch-card.png)
+
 ## Rewards store
 
 Tabs: **Gift cards · Deals · Brands**, each with category chips. Cards use the same components as the home screen.
